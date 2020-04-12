@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class Main {
 
@@ -11,9 +12,7 @@ public class Main {
         stringerinos.add("soso3");
 
 
-        for (Object susu : stringerinos) {
-            System.out.println(susu);
-        }
+        liesVorWild(stringerinos);
 
         Collection<Integer> nurNummern = new ArrayList<>();
         nurNummern.add(01);
@@ -25,10 +24,11 @@ public class Main {
 
         addAndReturn(str, stringerinos); //die methode funktioniert aber genau so mit (int, nurNummern)!
 
-        for (Object susu : stringerinos) {
-            System.out.println(susu);
+        addAndReturn(intForColl, nurNummern);
+        liesVorWild(stringerinos);
+        liesVorWild(nurNummern);
 
-        }
+
 
     }
 
@@ -37,6 +37,20 @@ public class Main {
 
         collection.add(s);
         return s;
+    }
+
+    //eine Methode die jedes Element der Collection vorliest, unabhängig ob String oder Integer
+
+    public static void liesVor(Collection<String> coll) { //o nein! die Methode geht nur mit String-Collection!!
+        for (String s : coll) {
+            System.out.println(s);
+        }
+    }
+
+    public static void liesVorWild(Collection<?> coll) { //o ja! jetzt funktionieren auch andere Typen!!
+        for (Object s : coll) {
+            System.out.println(s);
+        }
     }
 
 }
