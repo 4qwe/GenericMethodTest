@@ -33,10 +33,9 @@ public class Main {
     }
 
     //eine Methode zum hinzufügen und zurückgeben eines Objects zu einer collection
-    public static <T> T addAndReturn(T s, Collection<T> collection) {
+    public static <T> void addAndReturn(T s, Collection<T> collection) {
 
         collection.add(s);
-        return s;
     }
 
     //eine Methode die jedes Element der Collection vorliest, unabhängig ob String oder Integer
@@ -51,6 +50,7 @@ public class Main {
         for (Object s : coll) {
             System.out.println(s);
         }
+        System.out.println("\n");
     }
 
 }
